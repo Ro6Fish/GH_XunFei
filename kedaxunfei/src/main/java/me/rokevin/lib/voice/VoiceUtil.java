@@ -30,7 +30,7 @@ public class VoiceUtil {
      */
     public static void register(Context context, String packageName) {
 
-        String appId = getAppId(context, packageName);
+        String appId = getAppId(context);
 
 //        if (BuildConfig.DEBUG) {
 //            Log.e(VoiceUtil.class.getSimpleName(), "appId:" + appId);
@@ -43,17 +43,16 @@ public class VoiceUtil {
      * 获取科大讯飞的appId
      *
      * @param context
-     * @param packageName
      * @return
      */
-    private static String getAppId(Context context, String packageName) {
+    private static String getAppId(Context context) {
 
         String appId = "";
 
         ApplicationInfo info;
 
         try {
-            info = context.getPackageManager().getApplicationInfo(packageName, PackageManager.GET_META_DATA);
+            info = context.getPackageManager().getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA);
             appId = info.metaData.getString("IFLYTEK_APPKEY");
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
