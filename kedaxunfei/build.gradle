@@ -12,10 +12,10 @@ android {
         versionCode 1
         versionName "1.0"
 
-        ndk {
-            //选择要添加的对应cpu类型的.so库。
-            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
-        }
+//        ndk {
+//            //选择要添加的对应cpu类型的.so库。
+//            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+//        }
     }
     buildTypes {
         release {
@@ -29,10 +29,10 @@ android {
     }
     sourceSets {
 
-        main {
-
-            jniLibs.srcDirs = ['libs']
-        }
+//        main {
+//
+//            jniLibs.srcDirs = ['libs']
+//        }
     }
     packagingOptions {
         exclude 'META-INF/NOTICE'
@@ -61,7 +61,7 @@ def gitUrl = 'git@github.com:Ro6Fish/GH_XunFei.git'   // Git仓库的url
 group = "me.rokevin.app.lib"            // Maven Group ID for the artifact，一般填你唯一的包名
 // 这个version是区分library版本的，因此当我们需要更新library时记得修改这个version
 // 这个version影响后面的引用
-version = "0.0.3"
+version = "0.0.5"
 
 install {
     repositories.mavenInstaller {
